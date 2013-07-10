@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hire with driver</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="google-site-verification" content="m87Piok1FUkb8HGFXt5cphPpr10HiDaQSmCn2m7s3Os" />
+    <meta name="description" content=''/>
+    <meta name="keywords" content="" />
+    <link href="css/site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="/js/jquery-ui-1.10.1.custom.js"></script>
+    <script src="/js/jquery.timepicker.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/cookielib.js"></script>
+    <script src="/js/debugLibrary.js"></script>
+    <script src="/js/lang.global.js"></script>
+        <script src="/js/priceFormat.js" type="text/javascript"></script>
+    <script src="/js/offers.aspx.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            var hash = encodeURIComponent(getParameterByName('hash'));
+            // var hash = encodeURIComponent("gyU3Fay9G3HV++TVN0ZpwtfZ4p+m47j7izxLswBCODf0yrs4WRkkrV1XNNn+q0Xsh36Lp1dXg6RE4u6VGzFNwQIp/gIGs8a8237aDmcwfy4=");
+            callWS("get_offer_by_hash_JS",
+                   "language=" + etransfer_language + "&hash=" + hash,
+                   "loadOfferbyHash");
+
+
+        });
+    </script>
+
+</head>
+<body>
+    <div id="wrapper">
+         <div id="header">
+            <div id="home-icon">
+                <a href="/">
+                    <img src="/img/home_icon.png" /></a>
+            </div>
+            <div id="logo">
+                <a href="/" title="etransfer.it">
+                    <img src="/img/logo.png" alt="etransfer.it" /></a>
+            </div>
+            
+        </div>
+        <div id="content">
+ <div id="bookspinner"></div>
+            <h1 class="contact" id="place-head"></h1>
+           <div class="formdetails">
+                
+                     <p>     <span class="col4">Prezzo:</span>
+                        <span class="col1"><input name="txtPrice" id="txtPrice" class="small" type="text"/></span>
+                        <span class="col4"></span> <span class="col1">€ (TAX Included)</span>
+                     </p>
+                    <p>     <span class="col4">Modalità di pagamento:</span>
+                        <span class="col1">
+                            <span class="paymentclass"><input id="BankTransfer" name="BankTransfer" type="checkbox"/></span>
+                        <a href="#" target="_blank" title="Bonifico bancario"><img src="/img/bank_transfer.png" alt="etrasfer linkedin"></a>
+                            </span>
+                        <span class="col4"></span>
+                        <span class="col1"> <span class="paymentclass"><input id="Paypal" name="Paypal" type="checkbox"/></span>
+                        <a href="#" target="_blank" title="Paypal"><img src="/img/paypal.png" alt="etrasfer Paypal"></a>
+                            </span>
+                        <span class="col4"></span>
+                        <span class="col1">
+
+                            <span class="paymentclass"><input id="CashOnBoard" name="CashOnBoard" type="checkbox"/></span>
+
+                        <a href="#" target="_blank" title="Contanti a bordo"><img src="/img/cashonhand.png" alt="etrasfer Cash on board"></a>
+                            </span>
+                        <span class="col4"></span>
+                        <span class="col1"> <span class="paymentclass"><input id="Visa" name="Visa" type="checkbox"/></span>
+                        <a href="#" target="_blank" title="Carta di credito"><img src="/img/visa.png" alt="etrasfer visa"></a>
+                            <input name="hdnPayment" id="hdnPayment" type="hidden"/>
+                        </span>
+                     </p>
+                    <p>     <span class="col4">Note:</span>
+                        <span class="col5"><textarea name="txtOfferNotes" rows="2" cols="20" id="txtOfferNotes" style="height:150px;width:100%;"></textarea></span>
+                     </p>
+                    <p><span id="lblMsg" class="error_msg"></span></p>
+                    <div id="loadernew" class="loader"><img alt="Loading" src="/img/loader.gif"></div>
+                <p><input id="btnPlaceOrder"   type="button" value='Place Order'  />
+                    
+                </p>
+           
+                </div>
+               <div class="partnerdetails">
+                <p class="heading" id="service-details">Service Details:</p>
+                <p>
+                    <span class="col0" id="pick-up">From:</span>
+                    <span class="col">
+                        <span id="lblFromAdd"></span>,
+                        <span id="lblFrom"></span>, 
+                           
+                        <input value="Zogno" name="hdnCityFrom" id="hdnCityFrom" type="hidden"/>
+                        <span id="lblFromArea"></span>
+                    </span>
+                    <span class="col0" id="destination">To:</span>
+                    <span class="col">
+                        <span id="lblToAdd"></span>, 
+                        <span id="lblTo"></span>, 
+                           
+                        <input value="Milano" name="hdnCityTo" id="hdnCityTo" type="hidden"/>
+                        <span id="lblDestArea"></span>
+                    </span>
+                </p>
+                <p>
+                    <span class="col0" id="dep-date">Departure Date:</span>
+                    <span class="col"><span id="lblDepDate"></span>
+                    </span>
+                    <span class="col0" id="dep-time">Departure Time:</span>
+                    <span class="col"><span id="lblDepTime"></span>
+                    </span>
+                </p>
+                <p>
+                    <span class="col0" id="n-passengers">N. Passengers:</span>
+                    <span class="col"><span id="lblPassengers"></span>
+                    </span>
+                    <span class="col0" id="n-baggage">N. Baggage:</span>
+                    <span class="col"><span id="lblBaggages"></span>
+                    </span>
+                </p>
+                <p>
+                    <span class="col0" id="v-type">Vehicle Type:</span>
+                    <span class="col3"><span id="lblVehType"></span></span>
+                </p>
+                <p>
+                    <span class="col0" id="service-type">Service Type:</span>
+                    <span class="col3"><span id="lblTypeTransfer"></span></span>
+                </p>
+                <p class="heading" id="cust-info">
+                    Customer Info
+                   
+                </p>
+                <p>
+                    <span class="col0" id="name">Name:</span>
+                    <span class="col"><span id="lblClientName"></span></span>
+                    <span class="col0" id="surname">Surname:</span>
+                    <span class="col"><span id="lblClientSurName"></span></span>
+
+                </p>
+                <p>
+                    <span class="col0" id="customer-type">Customer Type:</span>
+                    <span class="col"><span id="lblCustomerType"></span></span>
+                    <span class="col0" id="comp-name">Company Name:</span>
+                    <span class="col"><span id="lblCompanyName"></span></span>
+                </p>
+                <p>
+                    <span class="col0" id="address">Address:</span>
+                    <span class="col"><span id="lblAddress"></span></span>
+
+                    <span class="col0" id="email">Email:</span>
+                    <span class="col"><span id="lblEmail"></span></span>
+                </p>
+                <p>
+                    <span class="col0" id="phone">Phone:</span>
+                    <span class="col"><span id="lblPhone"></span></span>
+
+                    <span class="col0" id="zip">Zip:</span>
+                    <span class="col"><span id="lblZip"></span></span>
+                </p>
+                <p>
+                    <b id="air-transfer">Airport Transfer:</b>
+                    <span class="col"><span id="lblAirport"></span></span>
+                </p>
+                <p>
+                    <span class="col0" id="type">Type:</span>
+                    <span class="col"><span id="lblAirportTypeTrans"></span></span>
+                </p>
+                <p>
+                    <span class="col0" id="flight-no">Flight No.:</span>
+                    <span class="col"><span id="lblFlightNo"></span></span>
+
+                    <span class="col0" id="pick-time">Pickup Time:</span>
+                    <span class="col"><span id="lblPickTime"></span></span>
+                </p>
+                <p><b id="add-info">Additional Information/Notes:</b></p>
+                <p>
+                    <span id="lblRemarks"></span>
+                </p>
+
+            </div>
+             
+            </div>
+        </div>
+     <div id="footer">
+        <p>Powered by <a href="/">GD Soft</a></p>
+    </div>
+</body>
+</html>

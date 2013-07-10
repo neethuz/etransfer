@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hire with driver</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="google-site-verification" content="m87Piok1FUkb8HGFXt5cphPpr10HiDaQSmCn2m7s3Os" />
+    <meta name="description" content='' />
+    <meta name="keywords" content="" />
+    <link href="/css/site.css" rel="stylesheet" />
+    <link href="/css/checkbox.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="/js/jquery-ui-1.10.1.custom.js"></script>
+    <script src="/js/jquery.timepicker.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/cookielib.js"></script>
+    <script src="/js/debugLibrary.js"></script>
+    <script src="/js/lang.global.js"></script>
+    <script src="/js/jquery.rateit.js"></script>
+    <script src="/js/area.js"></script>
+     <script>
+         $(document).ready(function () {
+             var area_name = encodeURIComponent(getParameterByName('name'));
+             LoadLabels(area_name);
+             $('.loader').fadeIn();
+             callWS("get_partner_list_JS",
+                           "language=" + etransfer_language + "&order_by=&nation_id=&area_ids_or_names=" + area_name + "&spoken_languages=&smart_ncc_certified=&ncc_online_certified=&sms_ready=&min_score=&topList=",
+                           "LoadPartnersList");
+         });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="home-icon">
+                <a href="/">
+                    <img src="/img/home_icon.png" /></a>
+            </div>
+            <div id="logo">
+                <a href="/" title="etransfer.it">
+                    <img src="/img/logo.png" alt="etransfer.it" /></a>
+            </div>
+            
+        </div>
+        <div id="content">
+                <h1 id="area-header"></h1>
+                <div class="areadetailimg">
+                    
+                </div>
+                <!--<div class="areadetailtext">
+                    <p>
+                        Agrigento si trova sulla costa meridionale della Sicilia ed è molto importante nel settore turistico: attrae persone grazie al suo ricco patrimonio archeologico. 
+Agrigento è inoltre un importante centro agricolo. 
+Ci sono molti borghi medievali e palazzi in stile barocco a testimonianza della sua antica storia. La città ha un rinomato museo archeologico.
+                    </p>
+                </div>-->
+                <div class="divider">
+                <div class="controls">
+                <div class="checkall">
+                    <input type="checkbox" id="chkSearch" class="regular-checkbox1" /><label for="chkSearch"></label>
+                    <span></span>
+                </div>
+                <a id="btnEnquire1" class="btnclass"></a>
+                    </div>
+                <div id="loaderall" class="loader">
+                    <img alt="Loading" src="/img/loader.gif" /></div>
+
+                <div id="areapartners" class="partner">
+                  
+                </div>
+
+                <div class="checkall floatleft">
+                    <input type="checkbox" id="chkSearchB" class="regular-checkbox1" /><label for="chkSearchB"></label>
+                    <span></span>
+                </div>
+                <a id="btnEnquire" class="btnclass floatleft"></a>
+            </div>
+            
+        </div>
+        <div id="footer">
+            <p>Powered by <a href="/">GD Soft</a></p>
+        </div>
+        </div>
+</body>
+</html>

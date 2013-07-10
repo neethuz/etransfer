@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hire with driver</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="google-site-verification" content="m87Piok1FUkb8HGFXt5cphPpr10HiDaQSmCn2m7s3Os" />
+    <meta name="description" content=''/>
+    <meta name="keywords" content="" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/checkbox.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <link href="css/jquery-ui-1.10.1.custom.css" rel="stylesheet" />
+    <link href="css/jquery.timepicker.css" rel="stylesheet" />
+    <script src="/js/jquery-ui-1.10.1.custom.js"></script>
+    <script src="/js/jquery.timepicker.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/lang.global.js"></script>
+    <script src="/js/cookielib.js"></script>
+    <script src="/js/debugLibrary.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;libraries=places"></script>
+    <script src="/js/gmap.js"></script>
+    <script src="/js/jquery.rateit.js"></script>
+    <script src="js/search.aspx.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+           <div id="header">
+            <div id="home-icon">
+                <a href="/">
+                    <img src="/img/home_icon.png" /></a>
+            </div>
+            <div id="logo">
+                <a href="/" title="etransfer.it">
+                    <img src="/img/logo.png" alt="etransfer.it" /></a>
+            </div>
+            
+        </div>
+               <div id="spinner"></div>
+        <div id="content">
+            <input type="hidden" id="hdnpartner" name="hdnpartner" />
+            <div id="searchtop" style="display:none;">
+                
+                <h1 id="result-head"></h1>
+                <div class="search-icon">
+    <a href="/hire-driver.html" class="buttons driver"><label id="lbHireDriver">Search Again</label></a>
+                    </div>
+            <div class="filter" id="filterpane">
+                
+                <span class="language_selection_panel">
+                    <img src="/img/it.gif" alt="IT" class="filter_ico" lang="it" filter_type="sel_languages"/>
+                    <img src="/img/en.jpg" alt="EN" class="filter_ico" lang="en" filter_type="sel_languages"/>
+                    <img src="/img/fr.gif" alt="FR" class="filter_ico" lang="fr" filter_type="sel_languages"/>
+                </span>
+                <span><img class="filter_ico" filter_type="sms_ready" src="/img/sms_ready.png" /></span>
+                <span><img class="filter_ico" filter_type="ncc_ready" src="/img/smart_ncc.png" /></span>
+                <span><img class="filter_ico" filter_type="nccol_ready" src="/img/ncc_cert.png"/></span>
+            </div>
+            <div class="divider">
+                <!--<h1>Tutti i <span>Partner</span></h1>-->
+                <div class="controls">
+                <div class="checkall">
+                    <input type="checkbox" id="chkSearch" class="regular-checkbox1" /><label for="chkSearch"></label>
+                    <span></span>
+                </div>
+                <a id="btnEnquire3" class="btnclass"></a>
+                    </div>
+                <div id="loaderall" class="loader">
+                    <img alt="Loading" src="/img/loader.gif" /></div>
+
+                <div id="areapartners">
+                   
+                </div>
+
+                <div class="checkall floatleft">
+                    <input type="checkbox" id="chkSearchB" class="regular-checkbox1" /><label for="chkSearchB"></label>
+                    <span></span>
+                </div>
+                <a id="btnEnquire2" class="btnclass floatleft"></a>
+            </div>
+            </div>
+            <div class="searchpane">
+                <h1 id="search-head"></h1>
+<div class="searcharea">
+        <div class="smalldiv">
+            <p id="pickup-place">Pickup Place:</p>
+            <p>
+                <input type="hidden" name="hdnSourceArea" id="hdnSourceArea" />
+                <span class="newpackageddl">
+                    <select name="ddlAreaSource" id="ddlAreaSource" class="small" onchange="initialize();">
+
+	</select></span>
+                <span class="newpackageddl">
+                <input type="hidden" name="hdnSourceCity" id="hdnSourceCity" />
+                    <select name="ddlCityPartenza" id="ddlCityPartenza">
+
+	</select></span>
+            </p>
+            <p>
+                <input name="txtSourceAddress" type="text" id="txtSourceAddress" style="width:90%;" />
+
+            </p>
+        </div>
+        <div class="smalldiv">
+            <p id="destination-place">Destination:</p>
+
+            <p>
+                <input type="hidden" name="hdnDestArea" id="hdnDestArea" />
+                <span class="newpackageddl">
+                    <select name="ddlAreaDestination" id="ddlAreaDestination" class="small" onchange="initialize();">
+
+	</select></span>
+                <span class="newpackageddl">
+                <input type="hidden" name="hdnDestCity" id="hdnDestCity" />
+                    <select name="ddlArrivo" id="ddlArrivo">
+
+	</select></span>
+
+            </p>
+            <p>
+                <input name="txtDestAddress" type="text" id="txtDestAddress" style="width:90%;" />
+
+            </p>
+        </div>
+        <div id="etransfer_search" data-role="page">
+            <p><span class='col1' id="google-map"></span></p>
+            <div class="gmap" id="map_canvas" data-role="content">
+            </div>
+            <div id="outputDiv"></div>
+        </div>
+        <p class="info">
+            <span id="lblDistance"></span>
+
+        </p>
+        <div class="bigdiv">
+            <p>
+                <span class="col2" id="n-passenger">N. Passenger</span>
+                <span class="col2" id="n-baggage">N. Baggage</span>
+            </p>
+            <p>
+
+
+                <span class="col2">
+                    <span class="newpackageddl">
+                        <select name="ddlPassengers" id="ddlPassengers">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="13">13</option>
+		<option value="14">14</option>
+		<option value="15">15</option>
+		<option value="16">16</option>
+		<option value="17">17</option>
+		<option value="18">18</option>
+		<option value="19">19</option>
+		<option value="20">20</option>
+		<option value="21">21</option>
+		<option value="22">22</option>
+		<option value="23">23</option>
+		<option value="24">24</option>
+		<option value="25">25</option>
+		<option value="26">26</option>
+		<option value="27">27</option>
+		<option value="28">28</option>
+		<option value="29">29</option>
+		<option value="30">30</option>
+		<option value="31">31</option>
+		<option value="32">32</option>
+		<option value="33">33</option>
+		<option value="34">34</option>
+		<option value="35">35</option>
+		<option value="36">36</option>
+		<option value="37">37</option>
+		<option value="38">38</option>
+		<option value="39">39</option>
+		<option value="40">40</option>
+		<option value="41">41</option>
+		<option value="42">42</option>
+		<option value="43">43</option>
+		<option value="44">44</option>
+		<option value="45">45</option>
+		<option value="46">46</option>
+		<option value="47">47</option>
+		<option value="48">48</option>
+		<option value="49">49</option>
+		<option value="50">50</option>
+		<option value="51">51</option>
+		<option value="52">52</option>
+		<option value="53">53</option>
+		<option value="54">54</option>
+		<option value="55">55</option>
+		<option value="56">56</option>
+		<option value="57">57</option>
+		<option value="58">58</option>
+		<option value="59">59</option>
+		<option value="60">60</option>
+		<option value="61">61</option>
+		<option value="62">62</option>
+		<option value="63">63</option>
+		<option value="64">64</option>
+		<option value="65">65</option>
+		<option value="66">66</option>
+		<option value="67">67</option>
+		<option value="68">68</option>
+		<option value="69">69</option>
+		<option value="70">70</option>
+		<option value="71">71</option>
+		<option value="72">72</option>
+		<option value="73">73</option>
+		<option value="74">74</option>
+		<option value="75">75</option>
+		<option value="76">76</option>
+		<option value="77">77</option>
+		<option value="78">78</option>
+		<option value="79">79</option>
+		<option value="80">80</option>
+		<option value="81">81</option>
+		<option value="82">82</option>
+		<option value="83">83</option>
+		<option value="84">84</option>
+		<option value="85">85</option>
+		<option value="86">86</option>
+		<option value="87">87</option>
+		<option value="88">88</option>
+		<option value="89">89</option>
+		<option value="90">90</option>
+		<option value="91">91</option>
+		<option value="92">92</option>
+		<option value="93">93</option>
+		<option value="94">94</option>
+		<option value="95">95</option>
+		<option value="96">96</option>
+		<option value="97">97</option>
+		<option value="98">98</option>
+		<option value="99">99</option>
+		<option value="100">100</option>
+
+	</select>
+                    </span>
+                </span>
+
+                <span class="col2">
+                    <span class="newpackageddl">
+                        <select name="ddlBaggage" id="ddlBaggage">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="13">13</option>
+		<option value="14">14</option>
+		<option value="15">15</option>
+		<option value="16">16</option>
+		<option value="17">17</option>
+		<option value="18">18</option>
+		<option value="19">19</option>
+		<option value="20">20</option>
+		<option value="21">21</option>
+		<option value="22">22</option>
+		<option value="23">23</option>
+		<option value="24">24</option>
+		<option value="25">25</option>
+		<option value="26">26</option>
+		<option value="27">27</option>
+		<option value="28">28</option>
+		<option value="29">29</option>
+		<option value="30">30</option>
+		<option value="31">31</option>
+		<option value="32">32</option>
+		<option value="33">33</option>
+		<option value="34">34</option>
+		<option value="35">35</option>
+		<option value="36">36</option>
+		<option value="37">37</option>
+		<option value="38">38</option>
+		<option value="39">39</option>
+		<option value="40">40</option>
+		<option value="41">41</option>
+		<option value="42">42</option>
+		<option value="43">43</option>
+		<option value="44">44</option>
+		<option value="45">45</option>
+		<option value="46">46</option>
+		<option value="47">47</option>
+		<option value="48">48</option>
+		<option value="49">49</option>
+		<option value="50">50</option>
+		<option value="51">51</option>
+		<option value="52">52</option>
+		<option value="53">53</option>
+		<option value="54">54</option>
+		<option value="55">55</option>
+		<option value="56">56</option>
+		<option value="57">57</option>
+		<option value="58">58</option>
+		<option value="59">59</option>
+		<option value="60">60</option>
+		<option value="61">61</option>
+		<option value="62">62</option>
+		<option value="63">63</option>
+		<option value="64">64</option>
+		<option value="65">65</option>
+		<option value="66">66</option>
+		<option value="67">67</option>
+		<option value="68">68</option>
+		<option value="69">69</option>
+		<option value="70">70</option>
+		<option value="71">71</option>
+		<option value="72">72</option>
+		<option value="73">73</option>
+		<option value="74">74</option>
+		<option value="75">75</option>
+		<option value="76">76</option>
+		<option value="77">77</option>
+		<option value="78">78</option>
+		<option value="79">79</option>
+		<option value="80">80</option>
+		<option value="81">81</option>
+		<option value="82">82</option>
+		<option value="83">83</option>
+		<option value="84">84</option>
+		<option value="85">85</option>
+		<option value="86">86</option>
+		<option value="87">87</option>
+		<option value="88">88</option>
+		<option value="89">89</option>
+		<option value="90">90</option>
+		<option value="91">91</option>
+		<option value="92">92</option>
+		<option value="93">93</option>
+		<option value="94">94</option>
+		<option value="95">95</option>
+		<option value="96">96</option>
+		<option value="97">97</option>
+		<option value="98">98</option>
+		<option value="99">99</option>
+		<option value="100">100</option>
+
+	</select></span>
+                </span>
+            </p>
+            <p>
+                <span class="col2" id="pick-date">Pickup Date:</span>
+                <span class="col2" id="pick-time">Pickup Time:</span>
+            </p>
+            <p>
+                <span class="col2">
+                    <input name="txtDate" type="text" id="txtDate" class="date" /></span>
+
+                <span class="col2">
+                    <input name="txtTime" type="text" id="txtTime" class="small" /></span>
+            </p>
+        </div>
+        <div class="lastdiv">
+            <p id="vehicle-type">Vehicle Type:</p>
+            <p class="vehicledropdown">
+                <ul class="vehicleselect">
+                    <li class="select">
+                        <span id="select-text">Select</span>
+                        <ul class='vehicleDropdown' style='display: none;'>
+                            <li title=1><a>Sedan</a></li><li title=42><a>Luxury Sedan</a></li><li title=3><a>Van/Minivan</a></li><li title=60><a>Bus/Coach</a></li><li title=45><a>Car Special events</a></li><li title=6><a>Bus Special events</a></li></ul>
+                    </li>
+                </ul>
+                <input type="hidden" name="hdnVehicleType" id="hdnVehicleType" />
+                </p>
+        </div>
+        <div id="searchcontrols" class="buttondiv">
+            <p>
+                <input id="btnSubmit"  type="button" value="Hire Driver" />&nbsp;
+                <input id="btnCancel" type="reset" value="Cancel" />
+            </p>
+        </div>
+
+    </div>
+        </div>
+    </div>
+    </div>
+     <div id="footer">
+        <p>Powered by <a href="/">GD Soft</a></p>
+    </div>
+</body>
+</html>
