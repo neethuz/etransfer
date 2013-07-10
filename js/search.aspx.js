@@ -273,7 +273,7 @@ function doPartnerSearch() {
        // $('#hdnSelectedPartners').val('');
         //location.hash = "#searchtop"
         $('#spinner').fadeIn();
-        $('#spinner').html('<p><img src="/img/loading_animation.gif"/></p> <p>' + lang[etransfer_language]["res_msg_loading"] + '</p>');
+        $('#spinner').html('<p><img src="img/loading_animation.gif"/></p> <p>' + lang[etransfer_language]["res_msg_loading"] + '</p>');
 
         
         callWS("get_partner_list_JS",

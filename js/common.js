@@ -22,7 +22,7 @@ function callWS(method, request_params, cbFunction, cbObject) {
         document.getElementsByTagName('head')[0].appendChild(script);
     }
     else
-        window.location.href = '/error.html';
+        window.location.href = 'error.html';
 }
 function CallLogin(cbFunction,cbObject) {
     if (cbObject == null) cbObject = "";

@@ -113,7 +113,7 @@ function GetVehiclesList(response) {
 
 function getpartner(selectedPartner) {
     $('#spinner').fadeIn();
-    $('#spinner').html('<p><img src="/img/loading_animation.gif"/></p> <p>' + lang[etransfer_language]["res_msg_loading"] + '</p>');
+    $('#spinner').html('<p><img src="img/loading_animation.gif"/></p> <p>' + lang[etransfer_language]["res_msg_loading"] + '</p>');
     callWS("get_partner_details_JS",
                   "language=&" + etransfer_language + "&partner_id_or_name=" + selectedPartner,
                   "LoadPartners");

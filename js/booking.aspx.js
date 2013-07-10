@@ -326,7 +326,7 @@ $(document).ready(function () {
             $('#ddlCountry').focus();
             return false;
         }
-        $('#bookspinner').html('<p><img src="/img/loading_animation.gif"/></p> <p>' + lang[etransfer_language]["res_msg_sending"] + '</p>');
+        $('#bookspinner').html('<p><img src="img/loading_animation.gif"/></p> <p>' + lang[etransfer_language]["res_msg_sending"] + '</p>');
         $('#bookspinner').fadeIn();
         sendflag = true;
         
