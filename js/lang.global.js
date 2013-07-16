@@ -124,7 +124,17 @@ var lang = {
         "res_global_lbl_service_type": "Service Type:",
         "res_placeoffer_lbl_main_head": "Place <span>Your Offer</span>",
         "res_placeoffer_lbl_your_offer": "Your Offer",
-        "res_placeoffer_btn_text": "Place Offer"
+        "res_placeoffer_btn_text": "Place Offer",
+        "res_menu_lbl_howitworks": "How it Works",
+        "res_menu_lbl_whereweare": "Where We Are",
+        "res_menu_lbl_contactus": "Contact Us",
+        "res_contact_header": "Contact <span>Us</span>",
+        "res_contact_desc":"Based on platform 'Smart NCC' - Rental Software",
+        "res_howitworks_lbl_select_trip": "Search your trip",
+        "res_howitworks_lbl_get_free_quote": "Get a free quote",
+        "res_howitworks_lbl_we_ask_partners": "We will ask our partners for an offer",
+        "res_howitworks_lbl_review": "Review and accept the best One",
+
     },
     "ITA": {
         "res_lbl_phone": "Tel.:",
@@ -249,7 +259,17 @@ var lang = {
         "res_global_lbl_service_type": "Tipo di servizio:",
         "res_placeoffer_lbl_main_head": "Invia <span>la tua offerta</span>",
         "res_placeoffer_lbl_your_offer": "La tua offerta",
-        "res_placeoffer_btn_text": "Invia l'offerta"
+        "res_placeoffer_btn_text": "Invia l'offerta",
+        "res_menu_lbl_howitworks": "Come funziona",
+        "res_menu_lbl_whereweare": "Dove siamo",
+        "res_menu_lbl_contactus":"Conatattaci",
+        "res_contact_header": "Conatattaci <span></span>",
+        "res_contact_desc": "Basato su piattaforma 'Smart NCC' - Software per autonoleggio",
+        "res_howitworks_lbl_select_trip": "Seleziona il tuo viaggio",
+        "res_howitworks_lbl_get_free_quote": "Richiedi un preventivo",
+        "res_howitworks_lbl_we_ask_partners": "Richiederemo un preventivo a tutti i nostri partner",
+        "res_howitworks_lbl_review": "Confronta i preventivi e accetta il migliore",
+
 
     }
 };

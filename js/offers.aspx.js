@@ -20,30 +20,7 @@ function getParameterByName(name) {
 $(document).ready(function () {
     innertContent="";
         CallLogin("setCookies", null);
-    $("input[type=checkbox]").on("click", function () {
-        var strPayment = $('#hdnPayment').val();
-        if (strPayment.indexOf(this.id) == -1)
-            $('#hdnPayment').val(strPayment + this.id + ",");
-        else
-            $('#hdnPayment').val(strPayment.replace(this.id + ",", ""));
-    });
-    $('#txtPrice').priceFormat({
-        prefix: '',
-        centsSeparator: ',',
-        thousandsSeparator: ''
-    });
-    $('#txtPrice').blur(function () {
-        if ($('#txtPrice').val() != '') {
-            $('#txtPrice').val($('#txtPrice').val().replace('.', ','));
-        }
-
-    });
-    $('#btnPlaceOrder').click(function () {
-        //set offer
-        $('#loadernew').fadeIn();
-        setPartnerOffer();
-       
-    });
+   
 });
 function setCookies(response) {
     if (response.status_code == "+Ok") {
@@ -162,6 +139,8 @@ function LoadPendingOffers(response) {
         
         if (offerlists[1].length == 0)
             $('#loadpending').fadeOut();
+        LoadLabels();
+
         for (var offerlist in offerlists[1]) {
             callWS("get_partner_details_JS",
                      "language=" + etransfer_language + "&partner_id_or_name=" + offerlists[1][offerlist].offer_id_partner,
@@ -199,7 +178,7 @@ function GetPendingPartners(response) {
             var img = "img/noresult.jpg";
             if (partners[partner].partner_logo != '')
                 img = "http://ws.etransfer.it/transferimg/" + partners[partner].partner_logo;
-            pendingPartners += "<div class='waitingoffers'><img src='" + img + "' /><h3><a target='_blank' href='"+ partners[partner].partner_url + "'>" + partners[partner].partner_firstname + "</a></h3></div>";
+            pendingPartners += "<div class='waitingoffers'><img src='" + img + "' /><h3>" + partners[partner].partner_firstname + "</h3></div>";
             $('#pendingpartners').empty().html(pendingPartners);
             $('#loadpending').fadeOut();
         }
@@ -207,7 +186,6 @@ function GetPendingPartners(response) {
         innerContent = "<div><div class='etransfer-error'>" + lang[etransfer_language]["res_msg_offer_please"] + "</div></div>";
         $('#pendingpartners').empty().html(innerContent);
     }
-    LoadLabels();
 }
 function LoadLabels()
 {
@@ -287,25 +265,25 @@ function PopulateOfferLists(response) {
             if (partners[partner].partner_fax != '')
                 contacttext += "<p><span><img src='img/fax.png' alt='" + lang[etransfer_language]["res_alt_fax"] + "'/></span><span class=label'>" + partners[partner].partner_fax + "</span></p>";
             if (partners[partner].partner_email != '')
-                contacttext += "<p><span><img src='img/email.png' alt='" + lang[etransfer_language]["res_alt_email"] + "'/></span><span class=label'> <a href='mailto:" + partners[partner].partner_email + "'>" + partners[partner].partner_email + "</span></a></p>";
+                contacttext += "<p><span><img src='img/email.png' alt='" + lang[etransfer_language]["res_alt_email"] + "'/></span><span class=label'> <a>" + partners[partner].partner_email + "</span></a></p>";
 
             if (partners[partner].partner_website != '')
-                contacttext += "<p><span><img src='img/web.png' alt='" + lang[etransfer_language]["res_alt_web"] + "'/></span> <span class=label'><a target='_blank' href='http://" + partners[partner].partner_website + "'>" + partners[partner].partner_website + "</a><span></p>";
+                contacttext += "<p><span><img src='img/web.png' alt='" + lang[etransfer_language]["res_alt_web"] + "'/></span> <span class=label'><a>" + partners[partner].partner_website + "</a><span></p>";
 
             if (offer_status=="ASSIGNED")
             {
                 innerContent += "<div class='offers'><div class='offerimg'><img src='" + img + "' /></div>";
                 innerContent += "<div class='offerprices'><p>" + lang[etransfer_language]["res_lbl_price"] + "<span class='price'>" + price + " €</span></p>";
                 innerContent += "<p class='accepted'><input disabled='disabled' type='button' value='accepted'/></p></div>";
-                innerContent += "<div class='offerpartner'><h3><a target='_blank' href='" + partners[partner].partner_url + "'>" + partners[partner].partner_firstname + "</a></h3>" +
-                                contacttext + "<p><span class='labels'>Payment Method:</span> <span>" + paymentnote + "</span></p><p><span class='labels'>" + lang[etransfer_language]["res_lbl_paynote"] + "</span> <span>" + offernote + "</span></p></div></div>";
+                innerContent += "<div class='offerpartner'><h3><a>" + partners[partner].partner_firstname + "</a></h3>" +
+                                contacttext + "<p><span class='labels'>" + lang[etransfer_language]["res_lbl_paymethod"] + "</span> <span>" + paymentnote + "</span></p><p><span class='labels'>" + lang[etransfer_language]["res_lbl_paynote"] + "</span> <span>" + offernote + "</span></p></div></div>";
             }
             else if (offer_status =="REFUSED") {
                 innerContent += "<div class='refoffers'><div class='refofferimg'><img src='" + img + "' /></div>";
                 innerContent += "<div class='refofferprices'><p>" + lang[etransfer_language]["res_lbl_price"] + "<span class='price'>" + price + " €</span></p>";
                 innerContent += "<p class='refused'><input disabled='disabled' type='button' value='refused'/></p></div>";
-                innerContent += "<div class='refofferpartner'><h3><a target='_blank' href='" + partners[partner].partner_url + "'>" + partners[partner].partner_firstname + "</a></h3>" +
-                                   contacttext + "<p><span class='labels'>Payment Method:</span> <span>" + paymentnote + "</span></p><p><span class='labels'>" + lang[etransfer_language]["res_lbl_paynote"] + "</span> <span>" + offernote + "</span></p></div></div>";
+                innerContent += "<div class='refofferpartner'><h3><a>" + partners[partner].partner_firstname + "</a></h3>" +
+                                   contacttext + "<p><span class='labels'>"+ lang[etransfer_language]["res_lbl_paymethod"] +"</span> <span>" + paymentnote + "</span></p><p><span class='labels'>" + lang[etransfer_language]["res_lbl_paynote"] + "</span> <span>" + offernote + "</span></p></div></div>";
                 
             }
             else {
@@ -313,8 +291,8 @@ function PopulateOfferLists(response) {
                 innerContent += "<div class='offerprices'><p>" + lang[etransfer_language]["res_lbl_price"] + "<span class='price'>" + price + " €</span></p>";
 
                 innerContent += "<p><input type='button' id='btn" + offer_id + "' value='Accept' onclick='return AcceptOfferByID(btn" + offer_id + "," + offer_id + ");' /></p></div>";
-                innerContent += "<div class='offerpartner'><h3><a target='_blank' href='" + partners[partner].partner_url + "'>" + partners[partner].partner_firstname + "</a></h3>" +
-                                    contacttext + "<p><span class='labels'>Payment Method:</span> <span>" + paymentnote + "</span></p><p><span class='labels'>" + lang[etransfer_language]["res_lbl_paynote"] + "</span> <span>" + offernote + "</span></p></div></div>";
+                innerContent += "<div class='offerpartner'><h3><a>" + partners[partner].partner_firstname + "</a></h3>" +
+                                    contacttext + "<p><span class='labels'>"+ lang[etransfer_language]["res_lbl_paymethod"] +"</span> <span>" + paymentnote + "</span></p><p><span class='labels'>" + lang[etransfer_language]["res_lbl_paynote"] + "</span> <span>" + offernote + "</span></p></div></div>";
                 
             }   
             $('#partneroffers').empty().html(innerContent);

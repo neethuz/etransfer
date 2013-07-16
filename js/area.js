@@ -7,7 +7,7 @@ function LoadAreaList(response)
         var areas = eval(response.obj);
         innerHtml = "<ul class='drivers'>";
         for (var area in areas) {
-            innerHtml += "<li><a href='/area.html?name=" + areas[area].area_desc + "'>" + areas[area].area_desc + "</a></li>";
+            innerHtml += "<li class='no-bg'><a href='/area.html?name=" + areas[area].area_desc + "'>" + areas[area].area_desc + "</a></li>";
 
         }
         innerHtml += "</ul>";

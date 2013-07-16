@@ -5,8 +5,9 @@
 function LoadHomeLabels() {
     $('#lbHireDriver').html(lang[etransfer_language]["res_home_hiredriver"]);
     $('#lbBookNow').html(lang[etransfer_language]["res_home_booknow"]);
-    $('#lbExploreArea').html(lang[etransfer_language]["res_home_explore_area"]);
-    $('#lbViewPartners').html(lang[etransfer_language]["res_home_view_partners"]);
+    $('#lbExploreArea').html(lang[etransfer_language]["res_menu_lbl_whereweare"]);
+    $('#lblHowworks').html(lang[etransfer_language]["res_menu_lbl_howitworks"]);
+    $('#lblContact').html(lang[etransfer_language]["res_menu_lbl_contactus"]);
     $('#lbExit').html(lang[etransfer_language]["res_home_exit"]);
     }
 function setCookies(response)

@@ -33,7 +33,7 @@
 			centsSeparator: '.',
 			thousandsSeparator: ',',
 			limit: false,
-			centsLimit: 2,
+			centsLimit: 0,
 			clearPrefix: false,
             clearSufix: false,
 			allowNegative: false,

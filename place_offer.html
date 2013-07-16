@@ -8,7 +8,7 @@
     <meta name="keywords" content="" />
     <link href="css/site.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/jquery-ui-1.10.1.custom.js"></script>
     <script src="js/jquery.timepicker.js"></script>
@@ -20,7 +20,30 @@
     <script src="js/offers.aspx.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
-            var hash = encodeURIComponent(getParameterByName('hash'));
+            $("input[type=checkbox]").on("click", function () {
+                var strPayment = $('#hdnPayment').val();
+                if (strPayment.indexOf(this.id) == -1)
+                    $('#hdnPayment').val(strPayment + this.id + ",");
+                else
+                    $('#hdnPayment').val(strPayment.replace(this.id + ",", ""));
+            });
+            $('#txtPrice').priceFormat({
+                prefix: '',
+                centsSeparator: ',',
+                thousandsSeparator: ''
+            });
+            $('#txtPrice').blur(function () {
+                if ($('#txtPrice').val() != '') {
+                    $('#txtPrice').val($('#txtPrice').val().replace('.', ','));
+                }
+
+            });
+            $('#btnPlaceOrder').click(function () {
+                //set offer
+                $('#loadernew').fadeIn();
+                setPartnerOffer();
+
+            }); var hash = encodeURIComponent(getParameterByName('hash'));
             // var hash = encodeURIComponent("gyU3Fay9G3HV++TVN0ZpwtfZ4p+m47j7izxLswBCODf0yrs4WRkkrV1XNNn+q0Xsh36Lp1dXg6RE4u6VGzFNwQIp/gIGs8a8237aDmcwfy4=");
             callWS("get_offer_by_hash_JS",
                    "language=" + etransfer_language + "&hash=" + hash,
@@ -185,7 +208,7 @@
             </div>
         </div>
      <div id="footer">
-        <p>Powered by <a href="http://www.gd-soft.it">GD Soft</a></p>
+        <p>Powered by <a href="">GD Soft</a></p>
     </div>
 </body>
 </html>

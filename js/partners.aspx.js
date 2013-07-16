@@ -13,8 +13,8 @@
             selectepartner = partners[partner].partner_id;
             innerHtml += "<h1>" + partners[partner].partner_firstname + "</h1>";
             innerHtml += "<div class='partner'>";
-            innerHtml += "<div class='detailimg'>";
-            innerHtml += "<img id='ilogo' class='plogo' src='http://ws.etransfer.it/transferimg/" + partners[partner].partner_logo + "'/>";
+           innerHtml += "<div class='detailimg'>";
+           innerHtml += "<img id='ilogo' class='plogo'  src='http://ws.etransfer.it/transferimg/" + partners[partner].partner_logo + "'/>";
             innerHtml += "<p class='certif'><span class='label certificates'>" + lang[etransfer_language]["res_partner_lbl_driver_speaks"] + "</span>";
             if (partners[partner].partner_languages != '') {
                 var langs = partners[partner].partner_languages.split('|');
@@ -36,7 +36,7 @@
             innerHtml += "<span>" + nccCertif + "</span>";
             innerHtml += "<span>" + smartCertif + "</span></p></div>";
             innerHtml += "<div class='listaddress'>";
-            innerHtml += "<p id='ck-button' title='" + lang[etransfer_language]["res_cbox_title"] + "'><label><input type='checkbox' onclick='return setPartnerQuotation(" + partners[partner].partner_id + ");' class='cbQuotation' value='" + partners[partner].partner_id + "'/><span>" + lang[etransfer_language]["res_cbox_text"] + "</span></label></p>";
+        //    innerHtml += "<p id='ck-button' title='" + lang[etransfer_language]["res_cbox_title"] + "'><label><input type='checkbox' onclick='return setPartnerQuotation(" + partners[partner].partner_id + ");' class='cbQuotation' value='" + partners[partner].partner_id + "'/><span>" + lang[etransfer_language]["res_cbox_text"] + "</span></label></p>";
             innerHtml += "<p><span class='label'>XP Score:</span>" + xpcontrol + "</p>";
             innerHtml += "<p><span class='label'>" + lang[etransfer_language]["res_partner_lbl_partner"] + "</span> <span><span id='lblAddress'>" + partners[partner].partner_address + ", " + partners[partner].partner_area + ", " + partners[partner].partner_city + ", " + partners[partner].partner_country + ", " + partners[partner].partner_zipcode + "</span></span> </p>";
 
