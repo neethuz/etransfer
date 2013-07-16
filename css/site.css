@@ -64,19 +64,19 @@ font-family: 'futura_bk_btbook';
   margin-left: -50px;
   font-size:12pt;
     }
-    #splash-logo p.lang {
+    #splash-logo div.lang {
          position: fixed;
   left: 50%;
   top: 65%;
   margin-top: -60px;
   margin-left: -40px;
     }
-    #splash-logo p.lang  a{
+    #splash-logo div.lang  a{
     text-decoration:none;
         margin:10px;
         float:left;
 }
-    #splash-logo p.lang img {
+    #splash-logo div.lang img {
         width:30px;
     }
 #splash-footer {
