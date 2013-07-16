@@ -1,22 +1,22 @@
-﻿@import url('http:/fonts.googleapis.com/css?family=Roboto+Condensed');
+﻿@import url('http://fonts.googleapis.com/css?family=Roboto+Condensed');
 @font-face {
 font-family: 'MyriadProBold';
-src: url('fonts/myriadpro-bold-webfont.eot');
-src: url('fonts/myriadpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
-url('fonts/myriadpro-bold-webfont.woff') format('woff'),
-url('fonts/myriadpro-bold-webfont.ttf') format('truetype'),
-url('fonts/myriadpro-bold-webfont.svg#MyriadProBold') format('svg');
+src: url('/fonts/myriadpro-bold-webfont.eot');
+src: url('/fonts/myriadpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+url('/fonts/myriadpro-bold-webfont.woff') format('woff'),
+url('/fonts/myriadpro-bold-webfont.ttf') format('truetype'),
+url('/fonts/myriadpro-bold-webfont.svg#MyriadProBold') format('svg');
 font-weight: normal;
 font-style: normal;
 
 }
 @font-face {
 font-family: 'futura_bk_btbook';
-src: url('fonts/15926_futubk__-webfont.eot');
-src: url('fonts/15926_futubk__-webfont.eot?#iefix') format('embedded-opentype'),
-url('fonts/15926_futubk__-webfont.woff') format('woff'),
-url('fonts/15926_futubk__-webfont.ttf') format('truetype'),
-url('fonts/15926_futubk__-webfont.svg#futura_bk_btbook') format('svg');
+src: url('/fonts/15926_futubk__-webfont.eot');
+src: url('/fonts/15926_futubk__-webfont.eot?#iefix') format('embedded-opentype'),
+url('/fonts/15926_futubk__-webfont.woff') format('woff'),
+url('/fonts/15926_futubk__-webfont.ttf') format('truetype'),
+url('/fonts/15926_futubk__-webfont.svg#futura_bk_btbook') format('svg');
 font-weight: normal;
 font-style: normal;
 
@@ -29,7 +29,7 @@ img {
     margin: 0;
 }
 body {
-    background:#1f1f1f url(../img/bg.png) repeat-x !important;
+    background:#1f1f1f url(/img/bg.png) repeat-x !important;
     margin:0; padding:0;
     font-family:Tahoma, Arial;
 }
@@ -64,19 +64,19 @@ font-family: 'futura_bk_btbook';
   margin-left: -50px;
   font-size:12pt;
     }
-    #splash-logo div.lang {
+    #splash-logo p.lang {
          position: fixed;
   left: 50%;
   top: 65%;
   margin-top: -60px;
   margin-left: -40px;
     }
-    #splash-logo div.lang  a{
+    #splash-logo p.lang  a{
     text-decoration:none;
         margin:10px;
         float:left;
 }
-    #splash-logo div.lang img {
+    #splash-logo p.lang img {
         width:30px;
     }
 #splash-footer {
@@ -169,7 +169,7 @@ top:1px;
     padding:10px 0px;
     vertical-align:middle;
     margin-top:10px;
-    background:url(../img/header_bg.gif) repeat-x;
+    background:url(/img/header_bg.gif) repeat-x;
     text-align:center;
     border-radius:0px 0px 5px 5px;
 }
@@ -237,7 +237,7 @@ width:90%;
 }
      #content ul.drivers li {
         padding-left:20px;
-        background:url(../img/bullets.gif) no-repeat left 30%;
+        background:url(/img/bullets.gif) no-repeat left 30%;
 margin:7px 2px;
 margin-top:-2px;
 line-height:20px;
@@ -254,7 +254,7 @@ width:90%;
 
     }
      #content ul.drivers li a{
-       background:url(../img/sel_bg.png) repeat-x;
+       background:url(/img/sel_bg.png) repeat-x;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
 	border-radius:4px;
@@ -376,15 +376,15 @@ width:90%;
 	top:1px;
 }
 /*.home-icons .board {
-background-image:url(../img/board.png);
+background-image:url(/img/board.png);
 background-repeat:no-repeat;
 }
 .home-icons .register {
-background-image:url(../img/register.png);
+background-image:url(/img/register.png);
 background-repeat:no-repeat;
 }
 .home-icons .driver {
-background-image:url(../img/driver.png);
+background-image:url(/img/driver.png);
  background-repeat:no-repeat;
 }*/
 /*Home.html -  End*/
@@ -404,7 +404,7 @@ width:94%;
        margin-top:-5px;
     }
     .searchpane h1 {
-background:url(../img/reservation-img.jpg) no-repeat left 100%;
+background:url(/img/reservation-img.jpg) no-repeat left 100%;
 padding-left:40px;
 height:28px;
 margin-bottom:0px;
@@ -504,7 +504,7 @@ margin-left:0px;
 margin:auto;overflow:hidden;
 color:#606060;
 background:white;
-background: url(../img/down_arrow.png) no-repeat 96% white;
+background: url(/img/down_arrow.png) no-repeat 96% white;
 overflow: hidden;
 border: 1px solid #e99c00;
 padding:8px;
@@ -556,7 +556,7 @@ margin:auto;
 list-style:none;
 color:#606060;  
 background:white;
-/*background: url(../img/down_arrow.png) no-repeat 96% white;*/
+/*background: url(/img/down_arrow.png) no-repeat 96% white;*/
 }
 ul.vehicleselect li.select span {
 width:95%;
@@ -565,17 +565,17 @@ border: 1px solid #e99c00;
 cursor:pointer;
 padding:6px;
 padding-left:10px;
-background: url(../img/down_arrow.png) no-repeat 98% white;
+background: url(/img/down_arrow.png) no-repeat 98% white;
 }
 ul.vehicleselect li.select span:hover {
-background: #fee594 url(../img/down_arrow.png) no-repeat 98%;
+background: #fee594 url(/img/down_arrow.png) no-repeat 98%;
 }
 .vehicleselect:hover {
     
 background:#fee594;
 }
 /*input[type='button'],  input[type='submit'], input[type='reset'] {
-background:url(../img/button.jpg) repeat-x;
+background:url(/img/button.jpg) repeat-x;
 height:32px;
 font-family:Arial;
 border-radius:8px;
@@ -595,7 +595,7 @@ text-transform:uppercase;
 color:#dfae16;
 }
 .searchpane h1 {
-background:url(../img/tab-reservation-img.jpg) no-repeat;
+background:url(/img/tab-reservation-img.jpg) no-repeat;
 padding-left:40px;
 }
 #content h1 span {
@@ -653,7 +653,7 @@ margin-left:0px;
 margin:auto;
 color:#606060;
 background:white;
-background: url(../img/down_arrow.png) no-repeat 96% white;
+background: url(/img/down_arrow.png) no-repeat 96% white;
 overflow: hidden;
 border: 1px solid #e99c00;
 padding:6px;
@@ -935,7 +935,7 @@ float:left;
 .partner ul li {
         
         padding-left:20px;
-        background:url(../img/bullets.gif) no-repeat left 30%;
+        background:url(/img/bullets.gif) no-repeat left 30%;
         width:95%;
 margin:7px 2px;
 margin-top:0px;
@@ -973,7 +973,7 @@ margin-right: 5px;
 #ck-button {
 margin:2px;
 margin-bottom:10px;
-background:url(../img/chk_normal.png) repeat-x;
+background:url(/img/chk_normal.png) repeat-x;
 border-radius:4px;
 -moz-border-radius:4px;
 -webkit-border-radius:4px;
@@ -988,7 +988,7 @@ max-width:98%;
 }
 
 #ck-button:hover {
-background:url(../img/chk_hover.png) repeat-x;
+background:url(/img/chk_hover.png) repeat-x;
 color:#fff;
 cursor:pointer;
 }
@@ -1017,7 +1017,7 @@ display:none;
 }
 
 #ck-button input:checked + span {
-background:url(../img/chk_active.png) repeat-x;
+background:url(/img/chk_active.png) repeat-x;
 cursor:pointer;
 color:#000;
 }
@@ -1144,7 +1144,7 @@ margin:3px;
               float:left;
               text-align:center;
               border:1px solid #007b09;
-background:url(../img/xp.png) repeat-x;
+background:url(/img/xp.png) repeat-x;
           }
                    .progressval {
                        margin:0px;
@@ -1179,7 +1179,7 @@ display:block;
 width:200px;
 }
 ul.vehicleDropdown li a {
-background:white url(../img/sedan_ico.png) no-repeat 3%;
+background:white url(/img/sedan_ico.png) no-repeat 3%;
 padding:10px;
 padding-left:50px;
 height:30px;
@@ -1192,7 +1192,7 @@ cursor:pointer;
 overflow:hidden;
 }
 ul.vehicleDropdown li a:hover {
-background:#fee594 url(../img/sedan_ico.png) no-repeat 3%;
+background:#fee594 url(/img/sedan_ico.png) no-repeat 3%;
 overflow-x:hidden !important;
 cursor:pointer;
 
@@ -1205,7 +1205,7 @@ div#spinner,div#bookspinner
     position: fixed;
     top: 45%;
     left: 50%;
-    /*background:url(../img/loading_animation.gif) no-repeat center #fff;*/
+    /*background:url(/img/loading_animation.gif) no-repeat center #fff;*/
     background:#fff;
     text-align:center;
     padding:20px;
@@ -1240,7 +1240,7 @@ width:100%;
 }
 
 .selpartners {
-	background:url(../img/sel_bg.png) repeat-x;
+	background:url(/img/sel_bg.png) repeat-x;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
 	border-radius:4px;
@@ -1557,7 +1557,7 @@ margin-left:0px;
 margin:auto;
 color:#606060;
 background:white;
-background: url(..../img/down_arrow.png) no-repeat 96% white;
+background: url(../img/down_arrow.png) no-repeat 96% white;
 overflow: hidden;
 border: 1px solid #e99c00;
 padding:4px;
@@ -1786,7 +1786,7 @@ margin-left:0px;
 margin:auto;
 color:#606060;
 background:white;
-background: url(..../img/down_arrow.png) no-repeat 96% white;
+background: url(../img/down_arrow.png) no-repeat 96% white;
 overflow: hidden;
 border: 1px solid #e99c00;
 padding:4px;

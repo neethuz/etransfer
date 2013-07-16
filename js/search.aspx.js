@@ -479,7 +479,7 @@ function PostBack() {
     $("#txtDate").datepicker({
         showButtonPanel: false,
         showOn: "button",
-        buttonImage: "img/calendar/calendar.gif",
+        buttonImage: "/img/calendar/calendar.gif",
         buttonImageOnly: true,
 		dateFormat: 'dd/mm/yy' 
     });
