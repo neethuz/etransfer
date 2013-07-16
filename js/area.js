@@ -7,7 +7,7 @@ function LoadAreaList(response)
         var areas = eval(response.obj);
         innerHtml = "<ul class='drivers'>";
         for (var area in areas) {
-            innerHtml += "<li class='no-bg'><a href='/area.html?name=" + areas[area].area_desc + "'>" + areas[area].area_desc + "</a></li>";
+            innerHtml += "<li class='no-bg'><a href='area.html?name=" + areas[area].area_desc + "'>" + areas[area].area_desc + "</a></li>";
 
         }
         innerHtml += "</ul>";
@@ -38,7 +38,7 @@ function setnewquotation(control, selectedPartner) {
 }
 function LoadLabels(area_name) {
     $('#area-header').html(area_name.replace('%20',' ') + " - " + lang[etransfer_language]["res_areadetails_lbl_allpartners"]);
-    $('.areadetailimg').html("<img src='/img/area/"+area_name+".jpg' />");
+    $('.areadetailimg').html("<img src='img/area/"+area_name+".jpg' />");
     $(".checkall span").html(lang[etransfer_language]["res_search_result_lbl_select_all"]);
     $("#btnEnquire").html(lang[etransfer_language]["res_global_link_enquire_text"]);
     $("#btnEnquire1").html(lang[etransfer_language]["res_global_link_enquire_text"]);
@@ -65,7 +65,7 @@ function LoadLabels(area_name) {
     $('#btnEnquire1').click(function () {
         if (window.localStorage.getItem("PartnerIds") != null) {
             //alert(window.localStorage.getItem("PartnerIds"));
-            window.location.href = '/book-request.html';
+            window.location.href = 'book-request.html';
             return false;
 
         }
@@ -76,7 +76,7 @@ function LoadLabels(area_name) {
     $('#btnEnquire').click(function () {
         if (window.localStorage.getItem("PartnerIds") != null) {
             //alert(window.localStorage.getItem("PartnerIds"));
-            window.location.href = '/book-request.html';
+            window.location.href = 'book-request.html';
             return false;
 
         }
@@ -93,15 +93,15 @@ function LoadPartnersList(response) {
             for (var partner in partners) {
                 var xpscore = partners[partner].etransfer_xpscore;
                 var xpmax = partners[partner].etransfer_max_xpscore;
-                var img = "/img/noresult.jpg";
-                var redbadge = "<img src='/img/red_badge.png' style='display:none;'/>";
-                var bluebadge = "<img src='/img/blue_badge.png' style='display:none;'/>";
+                var img = "img/noresult.jpg";
+                var redbadge = "<img src='img/red_badge.png' style='display:none;'/>";
+                var bluebadge = "<img src='img/blue_badge.png' style='display:none;'/>";
                 if (partners[partner].partner_logo != '')
                     img = "http://ws.etransfer.it/transferimg/" + partners[partner].partner_logo;
                 if (partners[partner].ncc_online_certified != '')
-                    redbadge = "<img src='/img/red_badge.png' style='display:block;'/>";
+                    redbadge = "<img src='img/red_badge.png' style='display:block;'/>";
                 if (partners[partner].smart_ncc_certified != '')
-                    bluebadge = "<img src='/img/blue_badge.png' style='display:block;'/>";
+                    bluebadge = "<img src='img/blue_badge.png' style='display:block;'/>";
                 var width = (parseInt(partners[partner].etransfer_xpscore) / parseInt(partners[partner].etransfer_max_xpscore.replace(",00", ""))) * 100;
                 var xpcontrol = "<span class='outerprogress'><span class='innerprogress' style='width:" + width + "% !important; background:url(/img/xp.png) repeat-x;'><span class='progressval'>" + partners[partner].etransfer_xpscore + "/" + partners[partner].etransfer_max_xpscore.replace(",00", "") + "  xp</span></span></span>";
                 /*<span class='label'>" + res_lbl_rating + "</span><span>" + rateimg + "</span><span class='more-link'><a title='" + res_ncc_badge_alt + "'>" + redbadge + "</a></span>*/

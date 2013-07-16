@@ -212,7 +212,7 @@ function SendEtransferBookRequest(response) {
         }
         else {
             $('#bookspinner').fadeOut();
-            window.location.href = '/thank-you.html';
+            window.location.href = 'thank-you.html';
         }
     }
     else {

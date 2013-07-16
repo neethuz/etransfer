@@ -50,7 +50,7 @@ function setOfferbyHash(response) {
             $('#pnlThankyou').fadeIn();
         }
         else
-            window.location.href = '/thank-you.aspx';
+            window.location.href = 'thank-you.aspx';
 
     }
     else {

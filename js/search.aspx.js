@@ -124,19 +124,19 @@ function PopulatePartnersList(response) {
                 strBookPartners = strBookPartners + selectedPartner + "|";
         }
         window.localStorage.setItem("PartnerIds", strBookPartners);
-        window.location.href = '/book-request.html';
+        window.location.href = 'book-request.html';
 
         //    var xpscore = partners[partner].etransfer_xpscore;
         //    var xpmax = partners[partner].etransfer_max_xpscore;
         //    var img = "/img/noresult.jpg";
-        //    var redbadge = "<img src='/img/red_badge.png' style='display:none;'/>";
-        //    var bluebadge = "<img src='/img/blue_badge.png' style='display:none;'/>";
+        //    var redbadge = "<img src='img/red_badge.png' style='display:none;'/>";
+        //    var bluebadge = "<img src='img/blue_badge.png' style='display:none;'/>";
         //    if (partners[partner].partner_logo != '')
         //        img = "http://ws.etransfer.it/transferimg/" + partners[partner].partner_logo;
         //    if (partners[partner].ncc_online_certified != '')
-        //        redbadge = "<img src='/img/red_badge.png' style='display:block;'/>";
+        //        redbadge = "<img src='img/red_badge.png' style='display:block;'/>";
         //    if (partners[partner].smart_ncc_certified != '')
-        //        bluebadge = "<img src='/img/blue_badge.png' style='display:block;'/>";
+        //        bluebadge = "<img src='img/blue_badge.png' style='display:block;'/>";
         //    var width = (parseInt(partners[partner].etransfer_xpscore) / parseInt(partners[partner].etransfer_max_xpscore.replace(",00", ""))) * 100;
         //    var xpcontrol = "<span class='outerprogress'><span class='innerprogress' style='width:" + width + "% !important; background:url(/img/xp.png) repeat-x;'><span class='progressval'>" + partners[partner].etransfer_xpscore + "/" + partners[partner].etransfer_max_xpscore.replace(",00", "") + "  xp</span></span></span>";
         //    /*<span class='label'>" + res_lbl_rating + "</span><span>" + rateimg + "</span><span class='more-link'><a title='" + res_ncc_badge_alt + "'>" + redbadge + "</a></span>*/
@@ -244,7 +244,7 @@ function setPartnerQuotation(selectedPartner) {
     else
         strPartners = strPartners.replace(selectedPartner + "|", "");
     window.localStorage.setItem("PartnerIds", strPartners);
-    window.location.href = '/book-request.html';
+    window.location.href = 'book-request.html';
 
 };
 function setQuotation(selectedPartner) {
@@ -362,7 +362,7 @@ function PostBack() {
     $('#btnEnquire3').click(function () {
         if (window.localStorage.getItem("PartnerIds") != null) {
             //alert(window.localStorage.getItem("PartnerIds"));
-            window.location.href = '/book-request.html';
+            window.location.href = 'book-request.html';
             return false;
 
         }
@@ -373,7 +373,7 @@ function PostBack() {
     $('#btnEnquire2').click(function () {
         if (window.localStorage.getItem("PartnerIds") != null) {
             //alert(window.localStorage.getItem("PartnerIds"));
-            window.location.href = '/book-request.html';
+            window.location.href = 'book-request.html';
             return false;
 
         }

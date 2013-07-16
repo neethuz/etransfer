@@ -19,11 +19,11 @@
             if (partners[partner].partner_languages != '') {
                 var langs = partners[partner].partner_languages.split('|');
                 if (langs[0] == 'ITA')
-                    language = "<span class='certificates'><a id='aItalian' title='Italian'><img alt='Italia' src='/img/IT.gif' width='24' /></a></span>"
+                    language = "<span class='certificates'><a id='aItalian' title='Italian'><img alt='Italia' src='img/IT.gif' width='24' /></a></span>"
                 if (langs[1] == 'ENG')
-                    language += "<span class='certificates'><a id='aEnglish' title='English'><img src='/img/en.jpg' alt='English' width='24' /></a></span>"
+                    language += "<span class='certificates'><a id='aEnglish' title='English'><img src='img/en.jpg' alt='English' width='24' /></a></span>"
                 if (langs[2] == 'FRA')
-                    language += "<span class='certificates'><a id='aItalian' title='French'><img alt='French' src='/img/fr.gif' width='24' /></a></span>"
+                    language += "<span class='certificates'><a id='aItalian' title='French'><img alt='French' src='img/fr.gif' width='24' /></a></span>"
 
             }
             innerHtml += language + "</p>";
@@ -45,8 +45,8 @@
             innerHtml += "<p><span class='label'>" + lang[etransfer_language]["res_partner_lbl_mobile"] + "</span> <span><span id='lblMobile'>" + partners[partner].parther_mobile_phone + "</span></span> </p>";
             innerHtml += "<p><span class='label'>" + lang[etransfer_language]["res_lbl_email"] + "</span> <span><a href='mailto:" + partners[partner].partner_email + "' id='lbtnEmail'>" + partners[partner].partner_email + "</a></span></p>";
             innerHtml += "<p><span class='label'>" + lang[etransfer_language]["res_lbl_web"] + "</span> <span><a href='http://" + partners[partner].partner_website + "' id='lbtnUrl' target='_blank'>" + partners[partner].partner_website + "</a></span></p>";
-            innerHtml += "<p class='socialicons'><span class='label'>Social network:</span><a href='https://www.facebook.com/pages/Arena-Travel-Casert' id='aFacebook' target='_blank' title='Facebook'><img src='/img/fb.png' alt='etrasfer facebook' /></a></p>";
-            innerHtml += "<p class='paymenticons'><span class='label'>Modalita di pagamento:</span><a title='Credit card online'><img src='/img/p_visa.png' alt='Credit card online' /></a><a title='Credit card on board'><img src='/img/p_visa_ob.png' alt='Credit card on board' /></a><a title='PayPal'><img src='/img/p_paypal.png' alt='PayPal' /></a></p>";
+            innerHtml += "<p class='socialicons'><span class='label'>Social network:</span><a href='https://www.facebook.com/pages/Arena-Travel-Casert' id='aFacebook' target='_blank' title='Facebook'><img src='img/fb.png' alt='etrasfer facebook' /></a></p>";
+            innerHtml += "<p class='paymenticons'><span class='label'>Modalita di pagamento:</span><a title='Credit card online'><img src='img/p_visa.png' alt='Credit card online' /></a><a title='Credit card on board'><img src='img/p_visa_ob.png' alt='Credit card on board' /></a><a title='PayPal'><img src='img/p_paypal.png' alt='PayPal' /></a></p>";
             innerHtml += "</div>";
             innerHtml += "<div class='listdetails'><div class='subheading'><h3>" + lang[etransfer_language]["res_partner_lbl_about"] + " " + partners[partner].partner_firstname + "</h3></div>";
             innerHtml += "<p style='width:90%'>" + partners[partner].partner_seo_description + "</p>";
