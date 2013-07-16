@@ -175,7 +175,7 @@ function GetSelectedPartner(response) {
         var partners = eval(response.obj);
         if (partners.length > 0) {
             for (var partner in partners) {
-                innerselHtml += "<div class='selpartners' id='book_partner" + partners[partner].partner_id + "'><span class='seltext'>" + partners[partner].partner_firstname.substr(0, 25) + "</span><span><a  onclick='return closeImage(book_partner" + partners[partner].partner_id + "," + partners[partner].partner_id + ");'><img src='/img/cancel.png'/></a></span></div>";
+                innerselHtml += "<div class='selpartners' id='book_partner" + partners[partner].partner_id + "'><span class='seltext'>" + partners[partner].partner_firstname.substr(0, 25) + "</span><span><a  onclick='return closeImage(book_partner" + partners[partner].partner_id + "," + partners[partner].partner_id + ");'><img src='img/cancel.png'/></a></span></div>";
             }
         }
     }
