@@ -1,7 +1,7 @@
 ﻿var etransfer_language = window.localStorage.getItem("lang");
 //etransfer_language: window.localStorage("lang");
 var lang = {
-    "ENG": {
+    "eng": {
         "res_lbl_phone": "Tel.:",
         "res_lbl_fax": "Fax:",
         "res_lbl_email": "Email:",
@@ -136,7 +136,7 @@ var lang = {
         "res_howitworks_lbl_review": "Review and accept the best One",
 
     },
-    "ITA": {
+    "ita": {
         "res_lbl_phone": "Tel.:",
         "res_lbl_fax": "Fax:",
         "res_lbl_email": "Email:",
