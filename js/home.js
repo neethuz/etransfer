@@ -13,7 +13,7 @@ function LoadHomeLabels() {
 function setCookies(response)
 {
     if (response.status_code == "+Ok") {
-        $.cookie("token", response.obj.substring(4, response.obj.length),2000);
+        window.localStorage.setItem("token",response.obj.substring(4, response.obj.length));
         LoadHomeLabels();
     }
 }

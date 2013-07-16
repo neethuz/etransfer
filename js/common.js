@@ -1,8 +1,8 @@
 ﻿function callWS(method, request_params, cbFunction, cbObject) {
     if (cbObject == null) cbObject = "";
     else cbObject = JSON.stringify(cbObject, null, 2);
-    if ($.cookie("token") != null) {
-        var reqUrl = "http://ws.etransfer.it/progettogestionale/wssmartncc/WS_etransfer.asmx/" + method + "?callback=" + cbFunction + "&cbObject=" + encodeURIComponent(cbObject) + "&rnd=" + Math.random() + "&token=" + $.cookie("token") + "&" + request_params;
+    if (window.localStorage.getItem("token") != null) {
+        var reqUrl = "http://ws.etransfer.it/progettogestionale/wssmartncc/WS_etransfer.asmx/" + method + "?callback=" + cbFunction + "&cbObject=" + encodeURIComponent(cbObject) + "&rnd=" + Math.random() + "&token=" + window.localStorage.getItem("token") + "&" + request_params;
         //var reqUrl = "http://devgiancarlo/progettogestionale/wssmartncc/WS_etransfer.asmx/" + method + "?callback=" + cbFunction + "&cbObject=" + encodeURIComponent(cbObject) + "&rnd=" + Math.random() + "&token=" + $("#hdnToken").val() + "&" + request_params;
 
         var script_id = null;

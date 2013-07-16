@@ -2,7 +2,7 @@
     if (cbObject == null) cbObject = "";
     if (cbFunction == null) cbFunction = "";
     else cbObject = JSON.stringify(cbObject, null, 2);
-    var reqUrl = "http://devgiancarlo/progettogestionale/wssmartncc/WS_log.asmx/log_JS?callback=" + cbFunction + "&cbObject=" + cbObject + "&rnd=" + Math.random() + "&token=" + $("#hdnToken").val() + "&uid_hash=" + uid_hash + "&evt_type=" + evt_type + "&evt_details=" + evt_details;
+    var reqUrl = "http://devgiancarlo/progettogestionale/wssmartncc/WS_log.asmx/log_JS?callback=" + cbFunction + "&cbObject=" + cbObject + "&rnd=" + Math.random() + "&token=" + window.localStorage.getItem("token") + "&uid_hash=" + uid_hash + "&evt_type=" + evt_type + "&evt_details=" + evt_details;
     //var reqUrl = "http://ws.etransfer.it/progettogestionale/wssmartncc/WS_log.asmx/log_JS?callback=" + cbFunction + "&cbObject=" + cbObject + "&rnd=" + Math.random() + "&token=" + $("#hdnToken").val() + "&uid_hash=" + uid_hash + "&evt_type=" + evt_type + "&evt_details=" + evt_details;
 
     var script_id = null;
