@@ -9,7 +9,7 @@
             var xpscore = partners[partner].etransfer_xpscore;
             var xpmax = partners[partner].etransfer_max_xpscore;
             var width = (parseInt(partners[partner].etransfer_xpscore) / parseInt(partners[partner].etransfer_max_xpscore.replace(',00', ''))) * 100;
-            var xpcontrol = "<span class='outerprogress'><span class='innerprogress' style='width:" + width + "% !important; background:url(/img/xp.png) repeat-x;'><span class='progressval'>" + xpscore + "/" + xpmax.replace(',00', '') + "  xp</span></span></span>";
+            var xpcontrol = "<span class='outerprogress'><span class='innerprogress' style='width:" + width + "% !important; background:url(../img/xp.png) repeat-x;'><span class='progressval'>" + xpscore + "/" + xpmax.replace(',00', '') + "  xp</span></span></span>";
             selectepartner = partners[partner].partner_id;
             innerHtml += "<h1>" + partners[partner].partner_firstname + "</h1>";
             innerHtml += "<div class='partner'>";
