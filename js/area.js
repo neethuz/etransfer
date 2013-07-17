@@ -103,7 +103,7 @@ function LoadPartnersList(response) {
                 if (partners[partner].smart_ncc_certified != '')
                     bluebadge = "<img src='img/blue_badge.png' style='display:block;'/>";
                 var width = (parseInt(partners[partner].etransfer_xpscore) / parseInt(partners[partner].etransfer_max_xpscore.replace(",00", ""))) * 100;
-                var xpcontrol = "<span class='outerprogress'><span class='innerprogress' style='width:" + width + "% !important; background:url(/img/xp.png) repeat-x;'><span class='progressval'>" + partners[partner].etransfer_xpscore + "/" + partners[partner].etransfer_max_xpscore.replace(",00", "") + "  xp</span></span></span>";
+                var xpcontrol = "<span class='outerprogress'><span class='innerprogress' style='width:" + width + "% !important; background:url(../img/xp.png) repeat-x;'><span class='progressval'>" + partners[partner].etransfer_xpscore + "/" + partners[partner].etransfer_max_xpscore.replace(",00", "") + "  xp</span></span></span>";
                 /*<span class='label'>" + res_lbl_rating + "</span><span>" + rateimg + "</span><span class='more-link'><a title='" + res_ncc_badge_alt + "'>" + redbadge + "</a></span>*/
                 innerHtml += "<div class='listings' id='partner" + partners[partner].partner_id + "'>" +
                     "<div class='listhead'><div class='listcheck'><input type='checkbox'  id='checkbox" + partners[partner].partner_id + "' onclick='return setnewquotation(this," + partners[partner].partner_id + ");' class='regular-checkbox searchchkbox' value='" + partners[partner].partner_id + "' /><label for='checkbox" + partners[partner].partner_id + "'></label></div>" +
