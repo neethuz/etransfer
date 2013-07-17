@@ -69,7 +69,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: #fff url("/img/bx_loader.gif") no-repeat 50% 50% !important;
+    background: #fff url(../img/bx_loader.gif) no-repeat 50% 50% !important;
 }
 
 #fancybox-content {
