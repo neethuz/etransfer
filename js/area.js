@@ -38,7 +38,7 @@ function setnewquotation(control, selectedPartner) {
 }
 function LoadLabels(area_name) {
     $('#area-header').html(area_name.replace('%20',' ') + " - " + lang[etransfer_language]["res_areadetails_lbl_allpartners"]);
-    $('.areadetailimg').html("<img src='http://www.etransfer.it/img/area/"+area_name+".jpg' />");
+    $('.areadetailimg').html("<img src='img/area/" + area_name.replace('%20', '-').replace("'","") + ".jpg' />");
     $(".checkall span").html(lang[etransfer_language]["res_search_result_lbl_select_all"]);
     $("#btnEnquire").html(lang[etransfer_language]["res_global_link_enquire_text"]);
     $("#btnEnquire1").html(lang[etransfer_language]["res_global_link_enquire_text"]);
