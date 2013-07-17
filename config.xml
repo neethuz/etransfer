@@ -9,6 +9,7 @@
         Best travel provider all over Italy.
     </description>
       <icon src="img/app-icon.png"></icon>
+      <preference name="show-splash-screen-spinner" value="true" />
       <preference name="auto-hide-splash-screen" value="false" />
       <gap:splash src="logo.png" />
 </widget>
